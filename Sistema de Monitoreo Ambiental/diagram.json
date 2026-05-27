@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "IoT Course - Estación Ambiental",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 80, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": 352.2,
+      "left": -6.8,
+      "attrs": { "rows": "20", "columns": "30" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -18.9,
+      "left": 311.4,
+      "attrs": { "temperature": "-36.4", "humidity": "0" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 185.4,
+      "left": 286,
+      "rotate": 180,
+      "attrs": { "lightLevel": "50" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 390.2, "left": 42.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_led",
+      "top": 372,
+      "left": 80,
+      "attrs": { "value": "220", "label": "220Ω" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 294.2,
+      "left": 172.8,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:GND.1", "dht1:GND", "black", [ "h14.59", "v-60", "h336" ] ],
+    [ "esp:4", "dht1:SDA", "green", [ "h70", "v-80", "h80" ] ],
+    [ "esp:3V3", "ldr1:VCC", "red", [ "v-12.8", "h148.99", "v134.4" ] ],
+    [ "esp:GND.2", "ldr1:GND", "black", [ "h30", "v112", "h157.24" ] ],
+    [ "esp:34", "ldr1:DO", "orange", [ "h120.19", "v64", "h163.2" ] ],
+    [ "led1:K", "bb1:2b.e", "black", [ "v10" ] ],
+    [ "esp:GND.3", "bb1:2b.a", "black", [ "h10", "v220" ] ],
+    [ "btn1:2.l", "bb1:8b.e", "black", [ "v10" ] ],
+    [ "bb1:8b.a", "esp:GND.3", "black", [ "h-40", "v-220" ] ],
+    [ "esp:2", "r_led:2", "gold", [ "h0" ] ],
+    [ "r_led:1", "led1:A", "gold", [ "v0" ] ],
+    [ "esp:GND.3", "bb1:tn.1", "black", [ "h14.44", "v169.6", "h-76.8" ] ],
+    [ "bb1:tn.2", "led1:C", "black", [ "v0" ] ],
+    [ "btn1:2.r", "bb1:tn.19", "black", [ "h0" ] ],
+    [ "esp:15", "btn1:1.l", "blue", [ "h52.84", "v54.4" ] ],
+    [ "esp:3V3", "dht1:VCC", "red", [ "h-4.61", "v-41.6", "h297.6", "v28.8" ] ],
+    [ "led1:A", "bb1:6t.d", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:5t.d", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
