@@ -155,7 +155,7 @@ const char* TS_API_KEY = "WRITE_API_KEY";
 
 ## Simulación con Wokwi
 
-El proyecto incluye soporte completo para simulación en **[Wokwi]([https://wokwi.com](https://wokwi.com/projects/465213871006503937))** sin utilizar hardware físico.
+El proyecto incluye soporte completo para simulación en **[Wokwi](https://wokwi.com/projects/465213871006503937)** sin utilizar hardware físico.
 
 ### Archivos de simulación incluidos
 
